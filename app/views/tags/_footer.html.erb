@@ -1,0 +1,13 @@
+<%- if controller_name == 'tags' || controller_name == 'home'%>
+    <%- if action_name != 'index' %>
+        <%= link_to '一覧に戻る', tags_path %> <br>
+    <% end  %>
+
+    <%- if action_name != 'new' %>
+        <%= link_to 'タグを作成する', new_tag_path	%> <br>
+    <% end  %>
+    <%- if action_name != 'search' %>
+        <%= link_to 'タグを検索する', tags_search_path	%>
+    <% end  %>
+
+<% end -%>
