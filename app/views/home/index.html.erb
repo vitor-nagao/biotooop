@@ -1,0 +1,7 @@
+<h1>Biotoopへようこそ</h1>
+
+<% if user_signed_in? %>
+    <%= link_to 'タグ一覧へ', tags_path %>
+<% else %>
+    まずはログインまたはユーザー登録をしてください
+<% end %>
