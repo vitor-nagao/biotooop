@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/vitor-nagao/rocketchat-ruby-sdk.git
+  revision: ea30dc99d1a1a9c85d876a415c0b78f18ece4abb
+  specs:
+    rocketchat-sdk (1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -186,6 +192,7 @@ DEPENDENCIES
   mysql2 (>= 0.3.18, < 0.5)
   puma (~> 3.0)
   rails (~> 5.0.1)
+  rocketchat-sdk!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
