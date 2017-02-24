@@ -4,7 +4,9 @@ services:
 
   biotooop:
     container_name: biotooop
-    build: .
+    image: biotooop/biotooop
+    volumes:
+      - $PWD:/usr/src/app
     environment:
       DB_HOST: mysql
       DB_PASSWORD: example

@@ -11,9 +11,10 @@ COPY Gemfile* ./
 RUN bundle install
 COPY . .
 
-RUN chmod 700 docker-entrypoint.sh && \
-    chmod 700 wait-for-it.sh
-ENTRYPOINT ["./docker-entrypoint.sh"]
+COPY *.sh /usr/local/bin/
+RUN ln -s usr/local/bin/docker-entrypoint.sh / && \
+    ln -s usr/local/bin/wait-for-it.sh /
+ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 8080
 CMD ["biotooop"]
