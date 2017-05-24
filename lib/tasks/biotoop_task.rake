@@ -10,7 +10,7 @@ namespace :biotoop_task do
 
     user_events = UserEvent.where(event_id: event.id)
     if user_events.count === 0
-      return puts 'there is no users in the event'
+      return puts 'there are no users in the event'
     end
 
     group = Group.new
