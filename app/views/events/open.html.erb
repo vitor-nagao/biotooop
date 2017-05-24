@@ -34,7 +34,7 @@
                   <%= form_tag({ controller: 'events', action: 'cancel' }, {method: 'post'}) do %>
                       <%= hidden_field :events, :event_id, :value => @event.id %>
                       <%= hidden_field :events, :user_id, :value => @uid %>
-                      <%= hidden_field :events, :biotoop_time, :value => true %>
+                      <%= hidden_field :biotoop, :biotoop_time, :value => true %>
                       <%= submit_tag('辞退') %>
                   <% end %>
                 <% end %>
