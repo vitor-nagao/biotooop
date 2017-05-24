@@ -115,9 +115,9 @@ class EventsController < ApplicationController
     @event.user_count = @event.user_count - 1
     respond_to do |format|
       if @event.save
-        if events_params['biotooptime']
+        if biotoop_params['biotoop_time']
           notice = 'イベントを辞退しました'
-          EventMailer.send_cancel_message(User.find@user_event.user_id, @event)
+          EventMailer.send_cancel_message(User.find_by(id: @user_event.user_id), @event).deliver_now
         else
           notice = 'イベントをキャンセルしました'
         end
@@ -142,6 +142,10 @@ class EventsController < ApplicationController
     end
 
     def events_params
-      params.require(:events).permit(:user_id, :event_id, :biotoop_time)
+      params.require(:events).permit(:user_id, :event_id)
+    end
+
+    def biotoop_params
+      params.require(:biotoop).permit(:biotoop_time)
     end
 end
