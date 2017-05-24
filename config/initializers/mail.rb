@@ -5,6 +5,7 @@ ActionMailer::Base.add_delivery_method(
     AWS::SES::Base,
     {
         access_key_id: config['access_key_id'],
-        secret_access_key: config['secret_access_key']
+        secret_access_key: config['secret_access_key'],
+        server: 'email.us-west-2.amazonaws.com'
     }
 )
