@@ -6,8 +6,8 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.string :area
       t.time :meeting_time
       t.string :meeting_place
-      t.integer :user_count
-
+      t.integer :user_count, null: false, default: ""
+      
       t.timestamps
     end
   end
